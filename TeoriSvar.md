@@ -30,6 +30,7 @@
 5. Vi kan som programmerare skapa klasser och relationer mellan dessa i ex C#. Sen skapas databas med tabeller och kolumner från koden automatiskt.
 
 6. Ett simulerat objekt som efterliknar ett annat objekt. Används vid testning.
+   Många svarade fejkat objekt vilket snarare är när man implementerar en speciell testversion av sitt objekt som då används vid testningen.
 
 7. ViewModelen innehåller data som vi vill visa i en speciell vy. Har ingen annan funktion än att tillhandahålla data till vyn medans en modelklass är en representation av datamodellen (databas).
    Data i ViewModelen kan vara förbehandlad så att tex Namn och adress som i Model är separata fält slagits ihop till ett enda fält då det ska visas så i vyn.
