@@ -3,7 +3,7 @@
   Summera alla talen och returnera summan. Ex: Input: "1,2,3,4"   Output: 10  (1+2+3+4)
 
 2.En serie med tal separerade med , i en sträng ska multipliceras som en serie.
-  Multiplicera alla talen och returnera summan. Ex: Input: "1,2,3,4"   Output: 24 (1*2*3*4)
+  Multiplicera alla talen och returnera summan. Ex: Input: "1,2,3,4"   Output: 24 (1 * 2 * 3 * 4)
 
 3.Om annat än siffror och kommatecken ingår i strängen för summa och multiplikation ska en FormatException kastas.
 
