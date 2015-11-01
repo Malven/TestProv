@@ -60,7 +60,7 @@
 15. Internationalisation är när man anpassar en applikation för att kunna hantera flera språk och lokaler.
     Localisation är när man sen implementerar stöd för ett visst språk. (Översättning)
 
-16. Den enhet vi testar för tillfället. En metod på en klass. Den bör testas så den är isolerad från övriga beroenden.
+16. Den enhet vi testar för tillfället. En klass kan ses som den minsta enheten i koden.
 
 17. TestMethod()
     {
