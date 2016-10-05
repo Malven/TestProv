@@ -1,13 +1,12 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using Prov2015;
 
 namespace Prov2015Test
 {
-    [TestClass]
     public class SimpleParserTest
     {
-        [TestMethod]
+        [Fact]
         public void ParseAndSum_EmptyString_ReturnsZero()
         {
             //Arrange
@@ -17,9 +16,9 @@ namespace Prov2015Test
             int sum = sp.ParseAndSum("");
 
             //Assert
-            Assert.AreEqual(0, sum);
+            Assert.Equal(0, sum);
         }
-        [TestMethod]
+        [Fact]
         public void ParseAndSum_TwoValues_ReturnsSum()
         {
             //Arrange
@@ -29,19 +28,26 @@ namespace Prov2015Test
             int sum = sp.ParseAndSum("10,2");
 
             //Assert
-            Assert.AreEqual(12, sum);
+            Assert.Equal(12, sum);
         }
-        [TestMethod]
-        [ExpectedException(typeof(FormatException))]
-        public void ParseAndSum_InvalidSeparator_InvalidOperationException()
+        [Fact]
+        //https://www.richard-banks.org/2015/07/stop-using-assertthrows-in-your-bdd.html
+        public async void ParseAndSum_InvalidSeparator_InvalidOperationException()
         {
             //Arrange
             SimpleParser sp = new SimpleParser();
 
             //Act
-            int sum = sp.ParseAndSum("10:2");
+            int i;
+            var exception = await Record.ExceptionAsync(() => i = sp.ParseAndSum("10:2"));
+
+            //Assert
+            Assert.NotNull(exception);
+            Assert.IsType<InvalidOperationException>(exception);
+
         }
-        [TestMethod]
+
+        [Fact]
         public void ParseAndSplit_String_ReturnsArrayofStrings()
         {
             //Arrange
@@ -52,7 +58,7 @@ namespace Prov2015Test
 
             //Assert
             string[] expected = new string[] { "1", "20", "300" };
-            CollectionAssert.AreEqual(expected, listofstrings);
+            Assert.Equal(expected, listofstrings);
         }
     }
 }
